@@ -28,7 +28,7 @@ def treats(people: int) -> int:
     """Computes number of treats needed based on amount of tea needed"""
     # Calls tea_bags function with the input of people,
     # then multiplies the result of tea_bags with 1.5; returns as int type
-    return int(tea_bags(people) * 1.5)
+    return int(tea_bags(people=people) * 1.5)
 
 
 def cost(tea_count: int, treat_count: int) -> float:
