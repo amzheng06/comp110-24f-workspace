@@ -1,8 +1,21 @@
-"""Calculates resources needed for a tea party of a certain number of people"""
+"""a lil testing file"""
 
 __author__: str = "730776315"
 
-x: int = 1
 
-while x == 1:
-    print("print")
+# cl11 - global variables and scope
+
+
+def remove_chars(msg: str, char: str) -> str:
+    """return copy of msg w/o char"""
+    copy: str = ""
+    index: int = 0
+    while index < len(msg):
+        if msg[index] != char:
+            copy += msg[index]
+        index += 1
+    return copy
+
+
+word: str = "yoyo"
+print(remove_chars(word, "o"))
