@@ -6,6 +6,8 @@ __author__ = "730776315"
 def all(inp_list: list[int], inp_int: int) -> bool:
     """Returns whether or not all ints in the list equal inp_int."""
     ind: int = 0
+    if len(inp_list) == 0:
+        return False
     while ind < len(inp_list):
         if inp_list[ind] != inp_int:
             return False  # exits
@@ -17,13 +19,14 @@ def max(inp_list: list[int]) -> int:
     """Finds the maximum number in a list."""
     if len(inp_list) == 0:
         raise ValueError("max() arg  is an empty List")
-    ind: int = 1  # because the value at ind=0 is already stor_max
-    stor_max: int = inp_list[0]
-    while ind < len(inp_list):
-        if inp_list[ind] > stor_max:
-            stor_max = inp_list[ind]
-        ind += 1
-    return stor_max
+    else:
+        ind: int = 1  # because the value at ind=0 is already stor_max
+        stor_max: int = inp_list[0]
+        while ind < len(inp_list):
+            if inp_list[ind] > stor_max:
+                stor_max = inp_list[ind]
+            ind += 1
+        return stor_max
 
 
 def is_equal(inp_list1: list[int], inp_list2: list[int]) -> bool:
