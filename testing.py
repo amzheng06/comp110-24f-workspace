@@ -37,12 +37,21 @@ __author__: str = "730776315"
 
 # cl15 - for loops
 
-names: list[str] = ["Alyssa", "Janet", "Vrinda"]
+# names: list[str] = ["Alyssa", "Janet", "Vrinda"]
 
-for idx in range(0, len(names)):  # index for loop method
-    print(f"{idx}: {names[idx]}")
+# for idx in range(0, len(names)):  # index for loop method
+#    print(f"{idx}: {names[idx]}")
 
-index: int = 0
-while index < len(names):
-    print(f"{index}: {names[index]}")
-    index += 1
+# index: int = 0
+# while index < len(names):
+#    print(f"{index}: {names[index]}")
+#    index += 1
+
+
+# cl17 - dictionaries
+
+ice_cream: dict[str, int] = {
+    "chocolate": 12,
+    "vanilla": 8,
+    "strawberry": 4,
+}
