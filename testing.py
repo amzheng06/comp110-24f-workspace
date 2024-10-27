@@ -55,3 +55,9 @@ ice_cream: dict[str, int] = {
     "vanilla": 8,
     "strawberry": 4,
 }
+
+total_orders: int = 0
+for flavor in ice_cream:
+    total_orders += ice_cream[flavor]
+
+print(ice_cream)
