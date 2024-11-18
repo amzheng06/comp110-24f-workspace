@@ -1,5 +1,7 @@
 """a lil testing file"""
 
+# import math
+
 __author__: str = "730776315"
 
 
@@ -50,49 +52,93 @@ __author__: str = "730776315"
 
 # cl17 - dictionaries
 
-ice_cream: dict[str, int] = {
-    "chocolate": 12,
-    "vanilla": 8,
-    "strawberry": 4,
-}
+# ice_cream: dict[str, int] = {
+#    "chocolate": 12,
+#    "vanilla": 8,
+#    "strawberry": 4,
+# }
 
-total_orders: int = 0
-for flavor in ice_cream:
-    total_orders += ice_cream[flavor]
-
-print(ice_cream)
+# total_orders: int = 0
+# for flavor in ice_cream:
+#    total_orders += ice_cream[flavor]
 
 
-class Point:
-    x: float
-    y: float
+# class Circle:
+#    radius: float
 
-    def __init__(self, x: float, y: float):
-        self.x = x
-        self.y = y
+#    def __init__(self, r: float):
+#        self.radius = r
 
-    def dist_from_origin(self) -> float:
-        return (self.x**2 + self.y**2) ** 0.5
-
-    def translate_x(self, dx: float) -> None:
-        self.x += dx
-
-    def translate_y(self, dy: float) -> None:
-        self.y += dy
+#    def area(self):
+#        return math.pi * self.radius**2
 
 
-class Line:
-    start: Point
-    end: Point
+# class Rectangle:
+#    width: float
+#    height: float
 
-    def __init__(self, start: Point, end: Point):
-        self.start = start
-        self.end = end
+#    def __init__(self, w: float, h: float):
+#        self.width = w
+#        self.height = h
 
-    def get_length(self) -> float:
-        return (
-            ((self.end.x - self.start.x) ** 2) + ((self.end.y - self.start.y) ** 2)
-        ) ** 0.5
+#    def area(self):
+#        return self.width * self.height
 
-    def get_slope(self) -> float:
-        return (self.end.y - self.start.y) / (self.end.x - self.start.x)
+
+class Course:
+    """Models the idea of a UNC Course."""
+
+    name: str
+    level: int
+    prereqs: list[str]
+
+    def __init__(self):
+        self.name = ""
+        self.level = 0
+
+    def is_valid_course(self, inp: str) -> bool:
+        if self.level < 400:
+            return False
+        else:
+            for c in self.prereqs:
+                if c == inp:
+                    return True
+            return False
+
+
+def find_courses(inp: list[Course], prereq: str) -> list[str]:
+    """Finds 400+ level courses w/ the given prereq."""
+    results: list[str] = []
+
+    for c in inp:
+        if c.level >= 400:
+            for p in c.prereqs:
+                if p == prereq:
+                    results.append(c.name)
+    return results
+
+
+class Car:
+    make: str
+    model: str
+    year: int
+    color: str
+    mileage: float
+
+    def __init__(self, make: str):
+        self.make = make
+        self.model = ""
+        self.year = 0
+        self.color = ""
+        self.mileage = 0.0
+
+    def update_mileage(self, miles: float):
+        self.mileage = miles
+
+    def display_info(self) -> None:
+        info: str = ""
+        print(info)
+
+
+def calculate_depreciation(inp: Car, depreciation_rate: float) -> float:
+    return depreciation_rate * inp.mileage
